@@ -11,12 +11,10 @@ metadata:
     - docker
     - backend
     - experimental
-
   annotations:
     github.com/project-slug: iesodias/api-cep
     backstage.io/techdocs-ref: dir:.
     backstage.io/kubernetes-id: api-cep
-
   links:
     - url: https://github.com/iesodias/api-cep
       title: Repositório (GitHub)
