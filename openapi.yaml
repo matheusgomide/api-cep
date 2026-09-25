@@ -1,0 +1,92 @@
+openapi: 3.0.0
+info:
+  title: API de CEP
+  description: API simples para consultar CEP via ViaCEP
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+    description: Servidor local
+paths:
+  /cep/{cep}:
+    get:
+      summary: Consulta informações de um CEP
+      description: Retorna dados de endereço a partir de um CEP brasileiro
+      tags:
+        - CEP
+      parameters:
+        - name: cep
+          in: path
+          required: true
+          description: CEP no formato 12345678 ou 12345-678
+          schema:
+            type: string
+            pattern: '^\d{5}-?\d{3}$'
+            example: "01001000"
+      responses:
+        '200':
+          description: CEP encontrado com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  cep:
+                    type: string
+                    example: "01001-000"
+                  logradouro:
+                    type: string
+                    example: "Praça da Sé"
+                  complemento:
+                    type: string
+                    example: "lado ímpar"
+                  bairro:
+                    type: string
+                    example: "Sé"
+                  localidade:
+                    type: string
+                    example: "São Paulo"
+                  uf:
+                    type: string
+                    example: "SP"
+                  ibge:
+                    type: string
+                    example: "3550308"
+                  gia:
+                    type: string
+                    example: "1004"
+                  ddd:
+                    type: string
+                    example: "11"
+                  siafi:
+                    type: string
+                    example: "7107"
+        '400':
+          description: CEP inválido
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  detail:
+                    type: string
+                    example: "CEP inválido"
+        '404':
+          description: CEP não encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  detail:
+                    type: string
+                    example: "CEP não encontrado"
+        '502':
+          description: Falha ao consultar serviço externo
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  detail:
+                    type: string
+                    example: "Falha ao consultar ViaCEP"

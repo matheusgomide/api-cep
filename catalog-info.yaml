@@ -11,10 +11,14 @@ metadata:
     - docker
     - backend
     - experimental
+
   annotations:
-    github.com/project-slug: matheusgomide/api-cep
+    github.com/project-slug: iesodias/api-cep
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-id: api-cep
+
   links:
-    - url: https://github.com/matheusgomide/api-cep
+    - url: https://github.com/iesodias/api-cep
       title: Repositório (GitHub)
       icon: github
     - url: http://localhost:3000/api-docs
@@ -24,17 +28,17 @@ metadata:
       title: Swagger UI (FastAPI)
       icon: docs
     - url: https://viacep.com.br
-      title: ViaCEP ( Serviço Externo)
+      title: ViaCEP (Serviço Externo)
       icon: web
       type: external-dependency
 spec:
   type: service
-  lifecycle: production
+  lifecycle: experimental
   owner: group:default/team-cep
   providesApis:
     - api-cep
   dependsOn:
-    - resource: default/viacep-api
+    - resource:default/viacep-api
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Resource
@@ -47,13 +51,30 @@ metadata:
     - third-party
   links:
     - url: https://viacep.com.br
-      title: ViaCEP WebSite
+      title: ViaCEP Website
       icon: web
-    - url: https://viacep.com.br/ws01310100/json/
+    - url: https://viacep.com.br/ws/01310100/json/
       title: Exemplo de Consulta
-      icon: docs   
+      icon: docs
 spec:
   type: external-api
   owner: group:default/team-cep
   dependencyOf:
-    - component: default/api-cep
+    - component:default/api-cep
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: api-cep
+  description: API para consulta de CEP usando ViaCEP
+  tags:
+    - rest
+    - openapi
+    - cep
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: user:default/guest
+  system: api-cep
+  definition:
+    $text: ./openapi.yaml

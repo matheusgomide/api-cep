@@ -1,0 +1,6 @@
+site_name: 'API CEP'
+nav:
+  - Home: index.md
+
+plugins:
+  - techdocs-core
