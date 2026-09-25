@@ -12,11 +12,11 @@ metadata:
     - backend
     - experimental
   annotations:
-    github.com/project-slug: iesodias/api-cep
+    github.com/project-slug: matheusgomide/api-cep
     backstage.io/techdocs-ref: dir:.
     backstage.io/kubernetes-id: api-cep
   links:
-    - url: https://github.com/iesodias/api-cep
+    - url: https://github.com/matheusgomide/api-cep
       title: Repositório (GitHub)
       icon: github
     - url: http://localhost:3000/api-docs

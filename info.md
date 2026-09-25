@@ -15,10 +15,10 @@
 docker build -t api-cep:latest .
 
 # Tag para o seu registry (exemplo com Docker Hub)
-docker tag api-cep:latest iesodias/api-cep:latest
+docker tag api-cep:latest matheusgomide/api-cep:latest
 
 # Push para o registry
-docker push iesodias/api-cep:latest
+docker push matheusgomide/api-cep:latest
 ```
 
 ### 2. Atualizar o Manifesto
@@ -26,7 +26,7 @@ docker push iesodias/api-cep:latest
 Edite o arquivo `k8s-deployment.yaml` e substitua a imagem:
 
 ```yaml
-image: iesodias/api-cep:latest  # <- Trocar por: seu-usuario/api-cep:latest
+image: matheusgomide/api-cep:latest  # <- Trocar por: seu-usuario/api-cep:latest
 ```
 
 ### 3. Deploy no Kubernetes
