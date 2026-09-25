@@ -1,8 +1,8 @@
-# ADR-001 — 001-teste
+# ADR-002 — 002-teste
 
 ## Status
 
-Accepted
+Proposed
 
 ## Sistema
 
@@ -16,34 +16,34 @@ group:default/team-cep
 
 ## Contexto
 
-001-teste
+002-teste
 
 ---
 
 ## Decisão
 
-001-teste
+002-teste
 
 ---
 
 ## Alternativas consideradas
 
-001-teste
+002-teste
 
 ---
 
 ## Consequências positivas
 
-001-teste
+002-teste
 
 ---
 
 ## Consequências negativas
 
-001-teste
+002-teste
 
 ---
 
 ## Observações
 
-001-teste
+002-teste
