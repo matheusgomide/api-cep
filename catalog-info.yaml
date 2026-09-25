@@ -72,7 +72,7 @@ metadata:
 spec:
   type: openapi
   lifecycle: experimental
-  owner: user:default/guest
+  owner: group:default/team-cep
   system: api-cep
   definition:
     $text: ./openapi.yaml
