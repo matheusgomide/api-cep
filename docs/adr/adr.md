@@ -1,4 +1,4 @@
-# ADR-002-teste: 002-teste
+# ADR-002: 002-teste
 
 Date: ${{ now | date("YYYY-MM-DD") }}
 
