@@ -13,10 +13,10 @@ metadata:
     - experimental
 
   annotations:
-    github.com/project-slug: iesodias/api-cep
+    github.com/project-slug: matheusgomide/api-cep
 
   links:
-    - url: https://github.com/iesodias/api-cep
+    - url: https://github.com/matheusgomide/api-cep
       title: Repositório (GitHub)
       icon: github
     - url: http://localhost:3000/api-docs
@@ -25,9 +25,35 @@ metadata:
     - url: http://localhost:8000/docs
       title: Swagger UI (FastAPI)
       icon: docs
+    - url: https://viacep.com.br
+      title: ViaCEP ( Serviço Externo)
+      icon: web
+      type: external-dependency
 spec:
   type: service
-  lifecycle: experimental
-  owner: user:default/guest
+  lifecycle: production
+  owner: group:default/team-cep
   providesApis:
     - api-cep
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: viacep-api
+  description: API externaViaCEP áraconsulta deCEPs brasileiros
+  tags:
+    - external
+    - api
+    - third-party
+  links:
+    - url: https://viacep.com.br
+    - title: ViaCEP WebSite
+    - icon: web
+    - url: https://viacep.com.br/ws01310100/json/
+    - title: Exemplo de Consulta
+    - icon: docs   
+spec:
+  type: external-api
+  owner: group:default/team-cep
+  dependencyOf:
+    - component:default/api-cep
