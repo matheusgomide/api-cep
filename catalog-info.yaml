@@ -34,7 +34,7 @@ spec:
   providesApis:
     - api-cep
   dependsOn:
-    - resource:default/viacep-api
+    - resource: default/viacep-api
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Resource
@@ -56,4 +56,4 @@ spec:
   type: external-api
   owner: group:default/team-cep
   dependencyOf:
-    - component:default/api-cep
+    - component: default/api-cep
