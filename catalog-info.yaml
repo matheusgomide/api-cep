@@ -11,10 +11,8 @@ metadata:
     - docker
     - backend
     - experimental
-
   annotations:
     github.com/project-slug: matheusgomide/api-cep
-
   links:
     - url: https://github.com/matheusgomide/api-cep
       title: Repositório (GitHub)
