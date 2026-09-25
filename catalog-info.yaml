@@ -13,7 +13,7 @@ metadata:
     - experimental
   annotations:
     backstage.io/source-location: url:https://github.com/matheusgomide/api-cep/
-    backstage.io/adr-location: docs/adr
+    backstage.io/adr-location: https://github.com/matheusgomide/api-cep/tree/main/docs/adr
     github.com/project-slug: matheusgomide/api-cep
     backstage.io/techdocs-ref: dir:.
     backstage.io/kubernetes-id: api-cep
